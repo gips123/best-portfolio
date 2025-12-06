@@ -19,6 +19,13 @@ export default function SplashScreen() {
       newSplashText = "ABOUT";
     } else if (pathname === "/pages/skills" || pathname === "/skills") {
       newSplashText = "SKILLS";
+    } else if (pathname.startsWith("/pages/projects/") || pathname.startsWith("/projects/")) {
+      // Check if it's a project detail page (has ID in path)
+      if (pathname.match(/\/pages\/projects\/\d+/) || pathname.match(/\/projects\/\d+/)) {
+        newSplashText = "DETAIL PROJECT";
+      } else {
+        newSplashText = "PROJECTS";
+      }
     } else if (pathname === "/pages/projects" || pathname === "/projects") {
       newSplashText = "PROJECTS";
     } else if (pathname === "/pages/contact" || pathname === "/contact") {

@@ -8,8 +8,9 @@ export default function ProjectsListSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("all");
 
+  // Filter out design projects from "all" category
   const filteredProjects = selectedCategory === "all" 
-    ? projects 
+    ? projects.filter(project => project.category !== "desain-grafis")
     : projects.filter(project => project.category === selectedCategory);
 
   const goToProject = (index: number) => {

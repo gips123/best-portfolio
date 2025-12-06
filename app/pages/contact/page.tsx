@@ -2,7 +2,6 @@ import PageWrapper from "../../components/transitions/PageWrapper";
 import PageHeader from "../../components/ui/PageHeader";
 import ContactInfo from "./components/ContactInfo";
 import SocialMedia from "./components/SocialMedia";
-import ContactForm from "./components/ContactForm";
 import { contactPageData } from "../../dummy/contactData";
 
 export default function Contact() {
@@ -16,13 +15,11 @@ export default function Contact() {
               description={contactPageData.description}
             />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-              <div className="space-y-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr">
                 <ContactInfo />
                 <SocialMedia />
               </div>
-
-              <ContactForm />
             </div>
           </div>
         </section>

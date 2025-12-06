@@ -10,9 +10,10 @@ export default function ProjectsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const filteredProjects = selectedCategory === "all" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  // Filter out design projects from carousel
+  const filteredProjects = projects
+    .filter(project => project.category !== "desain-grafis")
+    .filter(project => selectedCategory === "all" || project.category === selectedCategory);
 
   const nextProject = () => {
     if (filteredProjects.length === 0) return;
@@ -87,7 +88,16 @@ export default function ProjectsSection() {
         </motion.div>
         
         <div className="flex items-center gap-3">
-          <GlassButton onClick={() => {}}>See All Project</GlassButton>
+          <GlassButton 
+            onClick={() => {
+              const projectListSection = document.getElementById('project-list-section');
+              if (projectListSection) {
+                projectListSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+          >
+            See All Project
+          </GlassButton>
           <div className="bg-white/10 border border-white/20 rounded-lg px-2.5 py-1.5 backdrop-blur-sm">
             <span className="text-white text-xs font-medium">
               {filteredProjects.length > 0 ? String(safeIndex + 1).padStart(2, '0') : '00'}

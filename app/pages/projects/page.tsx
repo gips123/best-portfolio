@@ -1,5 +1,6 @@
 import PageWrapper from "../../components/transitions/PageWrapper";
 import ProjectsSection from "./components/ProjectsSection";
+import DesignProjectsShowcase from "./components/DesignProjectsShowcase";
 import ProjectsListSection from "./components/ProjectsListSection";
 
 export default function Projects() {
@@ -12,7 +13,11 @@ export default function Projects() {
           </div>
         </section>
 
-        <ProjectsListSection />
+        <DesignProjectsShowcase />
+
+        <div id="project-list-section">
+          <ProjectsListSection />
+        </div>
       </div>
     </PageWrapper>
   );

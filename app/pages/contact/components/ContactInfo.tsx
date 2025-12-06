@@ -5,13 +5,13 @@ import GlassCard from "../../../components/ui/GlassCard";
 
 export default function ContactInfo() {
   return (
-    <div className="space-y-6">
+    <>
       {contactInfo.map((info, index) => {
         const IconComponent = info.icon;
         return (
-          <a key={index} href={info.link} className="block">
-            <GlassCard>
-              <div className="flex items-center gap-4 p-6">
+          <a key={index} href={info.link} className="block h-full">
+            <GlassCard className="h-full">
+              <div className="flex items-center gap-4 p-6 h-full" style={{ minHeight: '160px' }}>
                 <div className="w-14 h-14 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                   <IconComponent className="w-7 h-7 text-white" />
                 </div>
@@ -24,7 +24,7 @@ export default function ContactInfo() {
           </a>
         );
       })}
-    </div>
+    </>
   );
 }
 

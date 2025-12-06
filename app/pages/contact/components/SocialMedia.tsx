@@ -6,13 +6,13 @@ import GlassCard from "../../../components/ui/GlassCard";
 
 export default function SocialMedia() {
   return (
-    <GlassCard hover={false}>
-      <div className="p-6">
+    <GlassCard hover={false} className="h-full">
+      <div className="p-6 h-full flex flex-col" style={{ minHeight: '160px' }}>
         <h3 className="text-white font-semibold text-xl mb-4 flex items-center gap-2">
           <MessageSquare className="w-5 h-5" />
           Social Media
         </h3>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-1 items-center">
           {socialLinks.map((social, index) => {
             const IconComponent = social.icon;
             return (

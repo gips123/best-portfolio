@@ -2,6 +2,7 @@
 
 import { ChevronLeft, ChevronRight, ExternalLink, Star } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Project } from "../../../dummy/projectsData";
 import TechTag from "../../../components/ui/TechTag";
 
@@ -56,7 +57,7 @@ export default function ProjectCarousel({
               src={currentProject.imageUrl}
               alt={currentProject.title}
               fill
-              className="object-cover grayscale"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
             
@@ -87,9 +88,6 @@ export default function ProjectCarousel({
           <div className="bg-white/5 p-4 sm:p-6 md:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
-                  <span className="text-white font-semibold text-xs">{currentProject.number}</span>
-                </div>
                 <Star className="w-4 h-4 text-white/60" />
               </div>
 
@@ -108,10 +106,13 @@ export default function ProjectCarousel({
               </div>
             </div>
 
-            <button className="self-start bg-white/20 border border-white/30 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center gap-2">
+            <Link
+              href={`/pages/projects/${currentProject.id}`}
+              className="self-start bg-white/20 border border-white/30 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center gap-2"
+            >
               Detail
               <ExternalLink className="w-3.5 h-3.5" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -18,8 +18,8 @@ export const contactInfo: ContactInfo[] = [
   {
     icon: Mail,
     label: "Email",
-    value: "ghifary.ahmad@example.com",
-    link: "mailto:ghifary.ahmad@example.com",
+    value: "ghifaryahmadwrap@gmail.com",
+    link: "mailto:ghifaryahmadwrap@gmail.com",
   },
   {
     icon: MapPin,
@@ -30,8 +30,8 @@ export const contactInfo: ContactInfo[] = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+62 812-3456-7890",
-    link: "tel:+6281234567890",
+    value: "+62 852-1900-8008",
+    link: "tel:+6285219008008",
   },
 ];
 
@@ -39,19 +39,19 @@ export const socialLinks: SocialLink[] = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://linkedin.com/in/ghifaryahmada",
     color: "hover:text-blue-400",
   },
   {
     name: "GitHub",
     icon: Github,
-    url: "https://github.com/yourusername",
+    url: "https://github.com/gips123",
     color: "hover:text-gray-300",
   },
   {
     name: "Instagram",
     icon: Instagram,
-    url: "https://instagram.com/yourusername",
+    url: "https://instagram.com/ghifaryahmada",
     color: "hover:text-pink-400",
   },
 ];
