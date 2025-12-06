@@ -19,7 +19,7 @@ export default function SectionHeader({ icon: Icon, title, className = "", iconS
 
   return (
     <div className={`flex items-center gap-4 mb-6 sm:mb-8 ${className}`}>
-      <div className="p-3 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm">
+      <div className="p-3 rounded-2xl bg-[#1a1a1a]/10 border border-white/20 ">
         <Icon className={`${iconSizes[iconSize]} text-white`} />
       </div>
       

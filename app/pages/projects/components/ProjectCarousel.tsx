@@ -72,7 +72,7 @@ export default function ProjectCarousel({
             />
           </div>
 
-          <div className="bg-white/5 p-4 sm:p-6 md:p-8 flex flex-col justify-between">
+          <div className="bg-[#1a1a1a]/90 backdrop-blur-sm p-4 sm:p-6 md:p-8 flex flex-col justify-between">
             <div>
               <h2 className="text-white font-semibold text-xl sm:text-2xl md:text-3xl mb-3 leading-tight">
                 {currentProject.title}
@@ -91,7 +91,7 @@ export default function ProjectCarousel({
 
             <div
               onClick={(e) => e.stopPropagation()}
-              className="self-start bg-white/20 border border-white/30 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center gap-2"
+              className="self-start bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/15 transition-all duration-300 backdrop-blur-sm flex items-center gap-2"
             >
               Detail
               <ExternalLink className="w-3.5 h-3.5" />

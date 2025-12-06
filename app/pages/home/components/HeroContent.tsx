@@ -29,7 +29,7 @@ export default function HeroContent({}: HeroContentProps) {
         </motion.div>
         {/* Name Card - Desktop: inline, Mobile: hidden (will show below PORTFOLIO) */}
         <motion.div 
-          className="hidden sm:block group relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-4 shadow-xl w-full sm:w-auto"
+          className="hidden sm:block group relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-4 shadow-xl hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden w-full sm:w-auto"
           initial={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -56,7 +56,7 @@ export default function HeroContent({}: HeroContentProps) {
 
       {/* Name Card - Mobile: below PORTFOLIO */}
       <motion.div 
-        className="block sm:hidden group relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl px-3 py-2.5 shadow-xl w-full mb-2"
+        className="block sm:hidden group relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl px-3 py-2.5 shadow-xl hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden w-full mb-2"
         initial={{ opacity: 1, x: 0, filter: "blur(0px)" }}
         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}

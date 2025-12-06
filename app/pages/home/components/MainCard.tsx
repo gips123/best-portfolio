@@ -10,7 +10,7 @@ interface MainCardProps {
 export default function MainCard({ children }: MainCardProps) {
   return (
     <motion.div 
-      className="relative w-full max-w-[800px] md:max-w-[800px] max-h-[90vh] backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl sm:rounded-3xl px-4 sm:px-6 py-4 sm:py-5 shadow-2xl overflow-hidden z-10"
+      className="relative w-full max-w-[800px] md:max-w-[800px] max-h-[90vh] backdrop-blur-xl bg-[#1a1a1a]/80 border border-white/20 rounded-2xl sm:rounded-3xl px-4 sm:px-6 py-4 sm:py-5 shadow-2xl overflow-hidden z-10"
       initial={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
       animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}

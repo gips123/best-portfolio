@@ -11,9 +11,16 @@ export default function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   // Filter out design projects from carousel
+  // Also filter out duplicate ifortepay entries (only show ID 5 in "all" category)
   const filteredProjects = projects
     .filter(project => project.category !== "desain-grafis")
-    .filter(project => selectedCategory === "all" || project.category === selectedCategory);
+    .filter(project => {
+      // Only show original ifortepay (ID 5) in "all" category, exclude frontend/backend variants
+      if (selectedCategory === "all" && project.title.toLowerCase().includes("ifortepay") && project.id !== 5) {
+        return false;
+      }
+      return selectedCategory === "all" || project.category === selectedCategory;
+    });
 
   const nextProject = () => {
     if (filteredProjects.length === 0) return;

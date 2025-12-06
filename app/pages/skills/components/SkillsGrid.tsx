@@ -38,11 +38,10 @@ export default function SkillsGrid() {
             className="flex flex-col h-full"
           >
             <GlassCard className="rounded-3xl p-6 sm:p-8 flex flex-col h-full">
-              <div className="absolute top-4 right-4 w-3 h-3 bg-white/40 rounded-full z-20"></div>
 
               <div className="flex flex-col h-full">
                 <div className="flex justify-center mb-6">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white/10 border-2 border-white/30 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-black/40 border border-white/30 rounded-2xl flex items-center justify-center ">
                     <IconComponent className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
                   </div>
                 </div>

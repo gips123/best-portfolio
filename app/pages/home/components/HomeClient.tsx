@@ -41,12 +41,12 @@ export default function HomeClient() {
           <a
             href="/cv/CV_GHIFARY.pdf"
             download="CV_GHIFARY.pdf"
-            className="group relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 shadow-xl hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
+            className="group relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 shadow-xl hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
           >
             <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div className="relative z-10 flex items-center gap-2 sm:gap-3">
-              <Download className="w-4 h-4 sm:w-5 sm:h-5 text-white/90 group-hover:text-white transition-colors" />
-              <span className="text-white/90 group-hover:text-white text-sm sm:text-base font-medium transition-colors">
+            <div className="relative flex items-center gap-2 sm:gap-3">
+              <Download className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+              <span className="text-white text-sm sm:text-base font-medium">
                 Download CV
               </span>
             </div>

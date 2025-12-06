@@ -21,7 +21,7 @@ export default function SocialMedia() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group relative w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-sm text-white/70 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-white/15 hover:border-white/30`}
+                className={`group relative w-12 h-12 rounded-xl bg-[#1a1a1a]/80 border border-white/20 flex items-center justify-center backdrop-blur-sm text-white/70 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-[#1a1a1a]/90 hover:border-white/30`}
               >
                 <IconComponent className="w-6 h-6" />
               </a>
