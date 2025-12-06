@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# backup folder - tidak perlu di-deploy
+public_backup/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

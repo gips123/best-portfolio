@@ -34,7 +34,6 @@ export const projectImageMap: Record<number, string[]> = {
     "/travel/2.png",
     "/travel/3.png",
     "/travel/4.png",
-    "/travel/5.png",
     "/travel/6.png",
     "/travel/7.png",
     "/travel/8.png",
