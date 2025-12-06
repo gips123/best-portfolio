@@ -20,11 +20,6 @@ export default function Template({ children }: TemplateProps) {
         x: 0,
         filter: "blur(0px)",
       }}
-      exit={{ 
-        opacity: 0, 
-        x: -50,
-        filter: "blur(10px)",
-      }}
       transition={{
         duration: 0.6,
         ease: [0.16, 1, 0.3, 1] as [number, number, number, number],

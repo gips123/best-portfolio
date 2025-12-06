@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { ReactNode, useState, useEffect, useRef } from "react";
 import SplashScreen from "./SplashScreen";
@@ -28,13 +27,11 @@ export default function TransitionProvider({ children }: { children: ReactNode }
   
   return (
     <div className="w-full min-h-screen bg-[#1a1a1a]" style={{ backgroundColor: '#1a1a1a' }}>
-      <AnimatePresence mode="wait" initial={false}>
-        {showContent && (
-          <div key={pathname} className="w-full">
-            {children}
-          </div>
-        )}
-      </AnimatePresence>
+      {showContent && (
+        <div key={pathname} className="w-full">
+          {children}
+        </div>
+      )}
       {isSplashActive && <SplashScreen />}
     </div>
   );
