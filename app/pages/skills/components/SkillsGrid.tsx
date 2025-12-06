@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { skillsData } from "../../../dummy/skillsData";
 import GlassCard from "../../../components/ui/GlassCard";
 import AnimatedCounter from "./AnimatedCounter";
@@ -9,6 +9,21 @@ import AnimatedCounter from "./AnimatedCounter";
 export default function SkillsGrid() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isMobile = window.innerWidth < 768;
+      
+      if (isMobile) {
+        // On mobile, immediately trigger animation
+        setShouldAnimate(true);
+      } else {
+        // On desktop, use scroll-based animation
+        setShouldAnimate(isInView);
+      }
+    }
+  }, [isInView]);
 
   return (
     <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -18,7 +33,7 @@ export default function SkillsGrid() {
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
             className="flex flex-col h-full"
           >
@@ -47,7 +62,7 @@ export default function SkillsGrid() {
                       <motion.div
                         key={skillIndex}
                         initial={{ opacity: 0, x: -20 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                        animate={shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                         transition={{ duration: 0.5, delay: (index * 0.2) + (skillIndex * 0.1) + 0.3 }}
                         className="space-y-2"
                       >
@@ -58,17 +73,17 @@ export default function SkillsGrid() {
                           </div>
                           <motion.span
                             initial={{ opacity: 0 }}
-                            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                            animate={shouldAnimate ? { opacity: 1 } : { opacity: 0 }}
                             transition={{ duration: 0.5, delay: (index * 0.2) + (skillIndex * 0.1) + 0.5 }}
                             className="text-white/80 text-sm font-medium"
                           >
-                            <AnimatedCounter value={skill.percentage} delay={(index * 0.2) + (skillIndex * 0.1) + 0.3} isInView={isInView} />%
+                            <AnimatedCounter value={skill.percentage} delay={(index * 0.2) + (skillIndex * 0.1) + 0.3} isInView={shouldAnimate} />%
                           </motion.span>
                         </div>
                         <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm">
                           <motion.div
                             initial={{ width: 0 }}
-                            animate={isInView ? { width: `${skill.percentage}%` } : { width: 0 }}
+                            animate={shouldAnimate ? { width: `${skill.percentage}%` } : { width: 0 }}
                             transition={{ duration: 1, delay: (index * 0.2) + (skillIndex * 0.1) + 0.3, ease: "easeOut" }}
                             className="h-full bg-white/40 rounded-full"
                           ></motion.div>

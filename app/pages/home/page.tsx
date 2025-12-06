@@ -4,8 +4,8 @@ import HomeClient from "./components/HomeClient";
 export default function Home() {
   return (
     <PageWrapper>
-      <div className="relative min-h-screen w-full overflow-hidden bg-[#1a1a1a]">
-        <section className="relative flex min-h-screen flex-col items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 py-8 sm:py-12 md:py-16">
+      <div className="relative h-screen w-full overflow-hidden bg-[#1a1a1a]">
+        <section className="relative flex h-full flex-col md:flex-col items-start md:items-center justify-center pl-4 sm:pl-6 md:pl-8 lg:pl-16 xl:pl-24 pr-0 sm:pr-6 md:pr-8 lg:pr-16 xl:pr-24 overflow-hidden">
           <HomeClient />
         </section>
       </div>

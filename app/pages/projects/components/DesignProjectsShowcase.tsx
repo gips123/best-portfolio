@@ -32,7 +32,7 @@ export default function DesignProjectsShowcase() {
 
   return (
     <>
-      <section className="relative w-full px-4 sm:px-8 md:px-16 lg:px-24 py-16 sm:py-20 md:py-24 flex items-center justify-center min-h-screen">
+      <section className="relative w-full px-4 sm:px-8 md:px-16 lg:px-24 py-12 sm:py-16 md:py-20 lg:py-24 flex items-center justify-center min-h-0 lg:min-h-screen">
         <div className="relative w-full max-w-7xl mx-auto flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -45,14 +45,14 @@ export default function DesignProjectsShowcase() {
               Design Portfolio
             </h2>
             <p className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto">
-              Explore my creative design work and visual projects
+              A collection of my creative design works showcasing visual storytelling and artistic expression
             </p>
           </motion.div>
 
-          <div className="w-full flex items-center justify-center">
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-[1400px] mx-auto">
+          <div className="w-full flex items-center justify-center overflow-x-auto scrollbar-hide px-2">
+            <div className="flex flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 w-auto max-w-[1400px] mx-auto">
             {/* Left Side - 6 Design Images */}
-            <div className="grid grid-cols-2 gap-2 sm:gap-3" style={{ width: '280px' }}>
+            <div className="grid grid-cols-2 gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0 w-[120px] sm:w-[160px] md:w-[200px] lg:w-[280px]">
               {leftProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
@@ -83,7 +83,7 @@ export default function DesignProjectsShowcase() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="flex items-center justify-center flex-shrink-0"
               >
-                <div className="relative w-full max-w-[500px] sm:max-w-[500px] md:max-w-[400px] mx-auto cursor-pointer group">
+                <div className="relative w-[120px] sm:w-[160px] md:w-[220px] lg:w-[300px] xl:w-[400px] mx-auto cursor-pointer group">
                   {/* Phone Frame Image */}
                   <div className="relative">
                     <Image
@@ -100,7 +100,7 @@ export default function DesignProjectsShowcase() {
             )}
 
             {/* Right Side - 6 Design Images */}
-            <div className="grid grid-cols-2 gap-2 sm:gap-3" style={{ width: '280px' }}>
+            <div className="grid grid-cols-2 gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0 w-[120px] sm:w-[160px] md:w-[200px] lg:w-[280px]">
               {rightProjects.map((project, index) => (
                 <motion.div
                   key={project.id}

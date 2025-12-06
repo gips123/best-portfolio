@@ -38,12 +38,12 @@ export default function ProjectsSection() {
 
   return (
     <>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <motion.div
           initial={{ y: 20, opacity: 0, scale: 0.9 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl px-6 py-3 shadow-2xl overflow-hidden"
+          className="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-3 shadow-2xl overflow-hidden w-full sm:w-auto"
         >
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/5 via-white/10 to-white/5 opacity-50"></div>
           <div className="absolute top-0 left-0 w-full h-1/2 rounded-3xl bg-gradient-to-b from-white/20 to-transparent opacity-30"></div>
@@ -76,18 +76,18 @@ export default function ProjectsSection() {
             <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12"></div>
           </motion.div>
           
-          <div className="relative z-10 flex flex-row items-center gap-4 flex-wrap justify-center">
-            <h2 className="text-white font-normal uppercase tracking-tight" style={{ fontFamily: 'var(--font-anton), sans-serif', fontSize: 'clamp(36px, 5vw, 56px)' }}>
+          <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 flex-wrap justify-center">
+            <h2 className="text-white font-normal uppercase tracking-tight text-center sm:text-left" style={{ fontFamily: 'var(--font-anton), sans-serif', fontSize: 'clamp(28px, 5vw, 56px)' }}>
               {projectsPageData.title}
             </h2>
-            <div className="h-12 w-px bg-white/20"></div>
-            <p className="text-white/70 text-base sm:text-lg max-w-2xl text-left">
+            <div className="hidden sm:block h-12 w-px bg-white/20"></div>
+            <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-2xl text-center sm:text-left">
               {projectsPageData.subtitle}
             </p>
           </div>
         </motion.div>
         
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
           <GlassButton 
             onClick={() => {
               const projectListSection = document.getElementById('project-list-section');
@@ -95,10 +95,11 @@ export default function ProjectsSection() {
                 projectListSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }
             }}
+            className="flex-1 sm:flex-initial"
           >
             See All Project
           </GlassButton>
-          <div className="bg-white/10 border border-white/20 rounded-lg px-2.5 py-1.5 backdrop-blur-sm">
+          <div className="bg-white/10 border border-white/20 rounded-lg px-2.5 py-1.5 backdrop-blur-sm flex-shrink-0">
             <span className="text-white text-xs font-medium">
               {filteredProjects.length > 0 ? String(safeIndex + 1).padStart(2, '0') : '00'}
             </span>

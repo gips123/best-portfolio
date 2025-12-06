@@ -1,8 +1,7 @@
 "use client";
 
-import { ArrowLeft, ExternalLink, Github, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, Tag } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Project } from "../../../../dummy/projectsData";
@@ -22,7 +21,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
   return (
     <div className="relative min-h-screen w-full bg-[#1a1a1a]">
       {/* Back Button */}
-      <div className="sticky top-0 z-50 backdrop-blur-xl bg-[#1a1a1a]/80 border-b border-white/10">
+      <div className="sticky top-0 z-[60] backdrop-blur-xl bg-[#1a1a1a]/80 border-b border-white/10 pt-20 sm:pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 py-4">
           <button
             onClick={() => router.back()}
@@ -49,11 +48,11 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
               </span>
             </div>
 
-            <h1 className="text-white font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+            <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6 leading-tight">
               {project.title}
             </h1>
 
-            <p className="text-white/80 text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed mb-8">
+            <p className="text-white/80 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl leading-relaxed mb-6 sm:mb-8">
               {project.description}
             </p>
 
@@ -61,20 +60,6 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
               {project.techStack.map((tech, index) => (
                 <TechTag key={index} tech={tech} />
               ))}
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              {project.detailUrl && project.detailUrl !== "#" && (
-                <Link
-                  href={project.detailUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white/20 border border-white/30 rounded-lg px-6 py-3 text-white text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  {project.buttonText || "Visit Website"}
-                </Link>
-              )}
             </div>
           </motion.div>
 

@@ -24,6 +24,16 @@ export default function AboutContent() {
             <ContentCard>
               <SectionHeader icon={IconComponent} title={card.title} />
               <div className="space-y-4 sm:space-y-6">
+                {/* For motto: quote first, then paragraphs */}
+                {card.id === "motto" && card.content.quote && (
+                  <div className="relative backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 md:p-10">
+                    <Quote className="w-8 h-8 text-white/50 mb-4" />
+                    <p className="text-white text-xl sm:text-2xl md:text-3xl font-semibold italic leading-relaxed">
+                      "{card.content.quote}"
+                    </p>
+                  </div>
+                )}
+
                 {card.content.paragraphs?.map((paragraph, index) => (
                   <div key={index} className="relative pl-6 border-l-2 border-white/20">
                     <p
@@ -58,7 +68,8 @@ export default function AboutContent() {
                   </div>
                 )}
 
-                {card.content.quote && (
+                {/* For other cards: quote at the end */}
+                {card.id !== "motto" && card.content.quote && (
                   <div className="relative backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 md:p-10">
                     <Quote className="w-8 h-8 text-white/50 mb-4" />
                     <p className="text-white text-xl sm:text-2xl md:text-3xl font-semibold italic leading-relaxed">

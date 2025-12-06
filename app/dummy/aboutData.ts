@@ -6,11 +6,11 @@ export const aboutCards = [
     content: {
       paragraphs: [
         {
-          text: "Hello! I'm <span className=\"font-semibold text-white\">Ghifary Ahmad Alfirdausy</span>, a passionate Front End Developer dedicated to creating beautiful, functional, and user-friendly web experiences.",
+          text: "Hello! I'm <span className=\"font-semibold text-white\">Ghifary Ahmad Alfirdausy</span>, a passionate Full Stack Developer dedicated to creating beautiful, functional, and user-friendly web experiences across all layers of application development.",
           type: "highlight"
         },
         {
-          text: "With a strong foundation in modern web technologies, I specialize in building responsive and interactive applications that not only look great but also provide exceptional user experiences. I'm constantly learning and exploring new technologies to stay at the forefront of web development.",
+          text: "With a strong foundation in modern web technologies, I specialize in building responsive and interactive applications from frontend to backend and database management. I'm skilled in creating applications that not only look great but also provide exceptional user experiences with robust architecture and efficient data management. I'm constantly learning and exploring new technologies to stay at the forefront of full-stack development.",
           type: "normal"
         }
       ]
@@ -23,11 +23,11 @@ export const aboutCards = [
     content: {
       paragraphs: [
         {
-          text: "My aspiration is to become a <span className=\"font-semibold text-white\">Senior Front End Developer</span> who is skilled and recognized in the technology industry. I want to continuously develop my abilities in building web applications that are not only visually beautiful but also provide exceptional user experiences.",
+          text: "My aspiration is to become a <span className=\"font-semibold text-white\">Full Stack Developer</span> who is skilled and recognized in all aspects of technology - from frontend, backend, to database management. I want to continuously develop my abilities in building complete web applications that are not only visually beautiful but also robust, scalable, and provide exceptional user experiences.",
           type: "highlight"
         },
         {
-          text: "I aspire to contribute to large-scale projects that have a positive impact on many people, as well as become a mentor for beginner developers who want to learn and grow in the field of front-end development.",
+          text: "I aspire to master all layers of application development, contribute to large-scale projects that have a positive impact on many people, and become a mentor for beginner developers who want to learn and grow in the field of full-stack development.",
           type: "normal"
         }
       ]
@@ -63,7 +63,7 @@ export const aboutCards = [
       ],
       hobbies: [
         { title: "Coding & Learning", desc: "Exploring new technologies and building personal projects" },
-        { title: "Design", desc: "Creating UI/UX designs and following the latest design trends" },
+        { title: "Design", desc: "Creating designs and following the latest design trends" },
         { title: "Music", desc: "Listening to music and discovering new sounds for inspiration and relaxation" },
         { title: "Billiard", desc: "Playing billiard for relaxation and strategic thinking" }
       ]

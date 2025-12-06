@@ -87,6 +87,30 @@ export const projectImageMap: Record<number, string[]> = {
     "/bendaku_backend/5.png",
     "/bendaku_backend/6.png",
   ],
+  23: [
+    "/ifortepay/cover.png",
+    "/ifortepay/1.png",
+    "/ifortepay/2.png",
+    "/ifortepay/3.png",
+    "/ifortepay/4.png",
+    "/ifortepay/5.png",
+    "/ifortepay/6.png",
+    "/ifortepay/7.png",
+    "/ifortepay/8.png",
+    "/ifortepay/9.png",
+  ],
+  24: [
+    "/ifortepay/cover.png",
+    "/ifortepay/1.png",
+    "/ifortepay/2.png",
+    "/ifortepay/3.png",
+    "/ifortepay/4.png",
+    "/ifortepay/5.png",
+    "/ifortepay/6.png",
+    "/ifortepay/7.png",
+    "/ifortepay/8.png",
+    "/ifortepay/9.png",
+  ],
 };
 
 // Helper function to get project images

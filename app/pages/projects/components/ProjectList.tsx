@@ -53,7 +53,7 @@ export default function ProjectList({
         </div>
 
         {projects.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             {projects.map((project, index) => (
               project.category === "desain-grafis" ? (
                 <GlassCard
@@ -61,8 +61,8 @@ export default function ProjectList({
                   onClick={() => handleDesignProjectClick(project)}
                   className="cursor-pointer"
                 >
-                <div className="p-4 sm:p-6">
-                  <div className="relative w-full h-48 mb-4 rounded-xl overflow-hidden">
+                <div className="p-3 sm:p-4 md:p-6">
+                  <div className="relative w-full h-40 sm:h-48 mb-3 sm:mb-4 rounded-xl overflow-hidden">
                     <Image
                       src={project.imageUrl}
                       alt={project.title}
@@ -74,46 +74,46 @@ export default function ProjectList({
 
                   {project.category !== "desain-grafis" && (
                     <div>
-                      <h3 className="text-white font-semibold text-lg sm:text-xl mb-2 line-clamp-2">
+                      <h3 className="text-white font-semibold text-sm sm:text-lg md:text-xl mb-1.5 sm:mb-2 line-clamp-2">
                         {project.title}
                       </h3>
-                      <p className="text-white/70 text-xs sm:text-sm mb-4 line-clamp-2">
+                      <p className="text-white/70 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">
                         {project.description}
                       </p>
 
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.techStack.slice(0, 3).map((tech, techIndex) => (
-                          <TechTag key={techIndex} tech={tech} className="px-2.5 py-1" />
+                      <div className="hidden sm:flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                        {project.techStack.slice(0, 2).map((tech, techIndex) => (
+                          <TechTag key={techIndex} tech={tech} className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-xs" />
                         ))}
-                        {project.techStack.length > 3 && (
-                          <span className="px-2.5 py-1 bg-white/10 border border-white/20 rounded-lg text-white/70 text-xs font-medium backdrop-blur-sm">
-                            +{project.techStack.length - 3}
+                        {project.techStack.length > 2 && (
+                          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-white/10 border border-white/20 rounded-lg text-white/70 text-xs font-medium backdrop-blur-sm">
+                            +{project.techStack.length - 2}
                           </span>
                         )}
                       </div>
                     </div>
                   )}
 
-                  <div className={project.category === "desain-grafis" ? "mt-4" : ""}>
+                  <div className={project.category === "desain-grafis" ? "mt-3 sm:mt-4" : ""}>
                     {project.category === "desain-grafis" ? (
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           handleDesignProjectClick(project);
                         }}
-                        className="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2"
+                        className="w-full bg-white/20 border border-white/30 rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-white text-xs sm:text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-1.5 sm:gap-2"
                       >
                         View Detail
-                        <ExternalLink className="w-3.5 h-3.5" />
+                        <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       </button>
                     ) : (
                       <Link
                         href={`/pages/projects/${project.id}`}
                         onClick={(e) => e.stopPropagation()}
-                        className="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2"
+                        className="w-full bg-white/20 border border-white/30 rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-white text-xs sm:text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-1.5 sm:gap-2"
                       >
                         View Detail
-                        <ExternalLink className="w-3.5 h-3.5" />
+                        <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       </Link>
                     )}
                   </div>
@@ -126,8 +126,8 @@ export default function ProjectList({
                   className="block"
                 >
                   <GlassCard className="cursor-pointer h-full">
-                    <div className="p-4 sm:p-6">
-                      <div className="relative w-full h-48 mb-4 rounded-xl overflow-hidden">
+                    <div className="p-3 sm:p-4 md:p-6">
+                      <div className="relative w-full h-40 sm:h-48 mb-3 sm:mb-4 rounded-xl overflow-hidden">
                         <Image
                           src={project.imageUrl}
                           alt={project.title}
@@ -138,29 +138,29 @@ export default function ProjectList({
                       </div>
 
                       <div>
-                        <h3 className="text-white font-semibold text-lg sm:text-xl mb-2 line-clamp-2">
+                        <h3 className="text-white font-semibold text-sm sm:text-lg md:text-xl mb-1.5 sm:mb-2 line-clamp-2">
                           {project.title}
                         </h3>
-                        <p className="text-white/70 text-xs sm:text-sm mb-4 line-clamp-2">
+                        <p className="text-white/70 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">
                           {project.description}
                         </p>
 
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.techStack.slice(0, 3).map((tech, techIndex) => (
-                            <TechTag key={techIndex} tech={tech} className="px-2.5 py-1" />
+                        <div className="hidden sm:flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                          {project.techStack.slice(0, 2).map((tech, techIndex) => (
+                            <TechTag key={techIndex} tech={tech} className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-xs" />
                           ))}
-                          {project.techStack.length > 3 && (
-                            <span className="px-2.5 py-1 bg-white/10 border border-white/20 rounded-lg text-white/70 text-xs font-medium backdrop-blur-sm">
-                              +{project.techStack.length - 3}
+                          {project.techStack.length > 2 && (
+                            <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-white/10 border border-white/20 rounded-lg text-white/70 text-xs font-medium backdrop-blur-sm">
+                              +{project.techStack.length - 2}
                             </span>
                           )}
                         </div>
                       </div>
 
                       <div>
-                        <div className="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2">
+                        <div className="w-full bg-white/20 border border-white/30 rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-white text-xs sm:text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-1.5 sm:gap-2">
                           View Detail
-                          <ExternalLink className="w-3.5 h-3.5" />
+                          <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                         </div>
                       </div>
                     </div>

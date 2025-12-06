@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, ExternalLink, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "../../../dummy/projectsData";
@@ -34,63 +34,46 @@ export default function ProjectCarousel({
   return (
     <div className="relative">
       <button
-        onClick={onPrev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-10 h-10 bg-white/10 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:scale-110"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          onPrev();
+        }}
+        className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 sm:-translate-x-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 bg-white/10 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:scale-110"
       >
-        <ChevronLeft className="w-5 h-5 text-white" />
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
       </button>
 
       <button
-        onClick={onNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-10 h-10 bg-white/10 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:scale-110"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          onNext();
+        }}
+        className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 sm:translate-x-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 bg-white/10 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:scale-110"
       >
-        <ChevronRight className="w-5 h-5 text-white" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
       </button>
 
-      <div className="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl overflow-hidden shadow-2xl">
+      <Link
+        href={`/pages/projects/${currentProject.id}`}
+        className="block relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl overflow-hidden shadow-2xl cursor-pointer group hover:scale-[1.02] transition-transform duration-300"
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/10 to-white/5 opacity-50"></div>
         <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/20 to-transparent opacity-30"></div>
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-          <div className="relative h-[300px] lg:h-auto overflow-hidden">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 min-h-[400px] sm:min-h-[500px]">
+          <div className="relative h-[250px] sm:h-[300px] lg:h-auto overflow-hidden">
             <Image
               src={currentProject.imageUrl}
               alt={currentProject.title}
               fill
-              className="object-cover"
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-            
-            <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 md:p-8">
-              <h3 className="text-white font-semibold text-xl sm:text-2xl md:text-3xl mb-3 leading-tight">
-                {currentProject.imageTitle}
-              </h3>
-              <p className="text-white/90 text-xs sm:text-sm md:text-base mb-4 leading-relaxed max-w-2xl">
-                {currentProject.imageDescription}
-              </p>
-              <button className="self-start bg-white/20 border border-white/30 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm">
-                {currentProject.buttonText}
-              </button>
-              
-              <div className="flex gap-1.5 mt-4">
-                {[0, 1, 2].map((dot) => (
-                  <div
-                    key={dot}
-                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                      dot === 0 ? 'bg-white' : 'bg-white/30'
-                    }`}
-                  ></div>
-                ))}
-              </div>
-            </div>
           </div>
 
           <div className="bg-white/5 p-4 sm:p-6 md:p-8 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Star className="w-4 h-4 text-white/60" />
-              </div>
-
               <h2 className="text-white font-semibold text-xl sm:text-2xl md:text-3xl mb-3 leading-tight">
                 {currentProject.title}
               </h2>
@@ -106,16 +89,16 @@ export default function ProjectCarousel({
               </div>
             </div>
 
-            <Link
-              href={`/pages/projects/${currentProject.id}`}
+            <div
+              onClick={(e) => e.stopPropagation()}
               className="self-start bg-white/20 border border-white/30 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center gap-2"
             >
               Detail
               <ExternalLink className="w-3.5 h-3.5" />
-            </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
 
       <div className="flex justify-center gap-1.5 mt-6">
         {Array.from({ length: totalProjects }).map((_, index) => (

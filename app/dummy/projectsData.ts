@@ -291,6 +291,30 @@ export const projects: Project[] = [
     detailUrl: "#",
     category: "desain-grafis",
   },
+  {
+    id: 23,
+    title: "ifortepay Internship Experience - Frontend",
+    description: "Frontend development work at ifortepay, building responsive user interfaces and interactive features for fintech solutions using modern React and Next.js technologies.",
+    techStack: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    imageTitle: "Frontend FinTech Development",
+    imageDescription: "Developed responsive and interactive frontend interfaces for payment gateway solutions with modern React ecosystem and best practices.",
+    imageUrl: "/ifortepay/cover.png",
+    buttonText: "View Experience",
+    detailUrl: "https://ifortepay.id",
+    category: "frontend",
+  },
+  {
+    id: 24,
+    title: "ifortepay Internship Experience - Backend",
+    description: "Backend development work at ifortepay, developing APIs, integrating payment systems, and building server-side solutions for fintech applications using Node.js and Strapi.",
+    techStack: ["Node.js", "Strapi", "REST API", "PostgreSQL", "API Integration"],
+    imageTitle: "Backend FinTech Development",
+    imageDescription: "Built robust backend systems and APIs for payment gateway solutions, handling secure transactions and financial data processing.",
+    imageUrl: "/ifortepay/cover.png",
+    buttonText: "View Experience",
+    detailUrl: "https://ifortepay.id",
+    category: "backend",
+  },
 ];
 
 // Helper function to get project by id
