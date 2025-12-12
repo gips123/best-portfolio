@@ -2,13 +2,18 @@
 
 import AboutSidebar from "./AboutSidebar";
 import AboutContent from "./AboutContent";
+import { AboutCard } from "../../../lib/types";
 
-export default function AboutClient() {
+interface AboutClientProps {
+  cards: AboutCard[];
+}
+
+export default function AboutClient({ cards }: AboutClientProps) {
   return (
     <>
       <AboutSidebar />
 
-      <AboutContent />
+      <AboutContent cards={cards} />
     </>
   );
 }

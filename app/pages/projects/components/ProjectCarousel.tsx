@@ -3,7 +3,7 @@
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Project } from "../../../dummy/projectsData";
+import { Project } from "../../../lib/types";
 import TechTag from "../../../components/ui/TechTag";
 
 interface ProjectCarouselProps {

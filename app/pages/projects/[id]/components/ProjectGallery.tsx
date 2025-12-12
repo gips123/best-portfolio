@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { getProjectImages } from "../../../../dummy/projectImagesData";
+import { getProjectImages } from "../../../../lib/api/projects";
 
 interface ProjectGalleryProps {
   projectId: number;
@@ -13,7 +13,23 @@ interface ProjectGalleryProps {
 }
 
 export default function ProjectGallery({ projectId, mainImage }: ProjectGalleryProps) {
-  const images = getProjectImages(projectId, mainImage);
+  const [images, setImages] = useState<string[]>([mainImage]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadImages() {
+      try {
+        const fetchedImages = await getProjectImages(projectId, mainImage);
+        setImages(fetchedImages);
+      } catch (error) {
+        console.error('Failed to load project images:', error);
+        setImages([mainImage]);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadImages();
+  }, [projectId, mainImage]);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
 

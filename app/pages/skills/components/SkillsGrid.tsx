@@ -2,11 +2,26 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { skillsData } from "../../../dummy/skillsData";
 import GlassCard from "../../../components/ui/GlassCard";
 import AnimatedCounter from "./AnimatedCounter";
+import { SkillCategory } from "../../../lib/types";
+import { Monitor, Server, Palette, Code, Database, PenTool, Users, LucideIcon } from "lucide-react";
 
-export default function SkillsGrid() {
+const iconMap: Record<string, LucideIcon> = {
+  Monitor,
+  Server,
+  Palette,
+  Code,
+  Database,
+  PenTool,
+  Users,
+};
+
+interface SkillsGridProps {
+  categories: SkillCategory[];
+}
+
+export default function SkillsGrid({ categories }: SkillsGridProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -27,8 +42,8 @@ export default function SkillsGrid() {
 
   return (
     <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      {skillsData.map((category, index) => {
-        const IconComponent = category.icon;
+      {categories.map((category, index) => {
+        const IconComponent = iconMap[category.icon] || Monitor;
         return (
           <motion.div
             key={index}
@@ -56,7 +71,7 @@ export default function SkillsGrid() {
 
                 <div className="space-y-4 mt-auto">
                   {category.skills.map((skill, skillIndex) => {
-                    const SkillIcon = skill.icon;
+                    const SkillIcon = iconMap[skill.icon] || Code;
                     return (
                       <motion.div
                         key={skillIndex}

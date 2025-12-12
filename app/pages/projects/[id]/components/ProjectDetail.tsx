@@ -4,7 +4,7 @@ import { ArrowLeft, Tag } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Project } from "../../../../dummy/projectsData";
+import { Project } from "../../../../lib/types";
 import TechTag from "../../../../components/ui/TechTag";
 import ProjectGallery from "./ProjectGallery";
 

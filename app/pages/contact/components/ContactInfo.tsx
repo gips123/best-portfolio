@@ -1,13 +1,24 @@
 "use client";
 
-import { contactInfo } from "../../../dummy/contactData";
 import GlassCard from "../../../components/ui/GlassCard";
+import { ContactInfo as ContactInfoType } from "../../../lib/types";
+import { Mail, MapPin, Phone, LucideIcon } from "lucide-react";
 
-export default function ContactInfo() {
+const iconMap: Record<string, LucideIcon> = {
+  Mail,
+  MapPin,
+  Phone,
+};
+
+interface ContactInfoProps {
+  contactInfo: ContactInfoType[];
+}
+
+export default function ContactInfo({ contactInfo }: ContactInfoProps) {
   return (
     <>
       {contactInfo.map((info, index) => {
-        const IconComponent = info.icon;
+        const IconComponent = iconMap[info.icon] || Mail;
         return (
           <a key={index} href={info.link} className="block h-full">
             <GlassCard className="h-full">

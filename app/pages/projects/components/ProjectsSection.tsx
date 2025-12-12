@@ -2,11 +2,20 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { projects, projectsPageData } from "../../../dummy/projectsData";
+import { Project } from "../../../lib/types";
 import GlassButton from "../../../components/ui/GlassButton";
 import ProjectCarousel from "./ProjectCarousel";
 
-export default function ProjectsSection() {
+interface ProjectsSectionProps {
+  projects: Project[];
+}
+
+const projectsPageData = {
+  title: "PROJECTS",
+  subtitle: "Explore my portfolio of creative projects and innovative solutions. Each project represents my passion for building beautiful digital experiences.",
+};
+
+export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("all");
 

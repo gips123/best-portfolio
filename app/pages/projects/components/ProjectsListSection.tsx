@@ -1,10 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { projects } from "../../../dummy/projectsData";
+import { Project, Category } from "../../../lib/types";
 import ProjectList from "./ProjectList";
 
-export default function ProjectsListSection() {
+interface ProjectsListSectionProps {
+  projects: Project[];
+  categories: Category[];
+}
+
+export default function ProjectsListSection({ projects, categories }: ProjectsListSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("all");
 
@@ -34,6 +39,7 @@ export default function ProjectsListSection() {
     <ProjectList
       selectedCategory={selectedCategory}
       projects={filteredProjects}
+      categories={categories}
       onCategoryChange={handleCategoryChange}
       onProjectClick={goToProject}
     />

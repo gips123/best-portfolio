@@ -3,7 +3,7 @@
 import { Rocket, Target, Heart, Quote, User, LucideIcon } from "lucide-react";
 import ContentCard from "../../../components/ui/ContentCard";
 import SectionHeader from "../../../components/ui/SectionHeader";
-import { aboutCards } from "../../../dummy/aboutData";
+import { AboutCard } from "../../../lib/types";
 
 const iconMap: Record<string, LucideIcon> = {
   User,
@@ -13,10 +13,14 @@ const iconMap: Record<string, LucideIcon> = {
   Quote,
 };
 
-export default function AboutContent() {
+interface AboutContentProps {
+  cards: AboutCard[];
+}
+
+export default function AboutContent({ cards }: AboutContentProps) {
   return (
     <div className="relative flex-1 space-y-6">
-      {aboutCards.map((card) => {
+      {cards.map((card) => {
         const IconComponent = iconMap[card.icon];
         
         return (

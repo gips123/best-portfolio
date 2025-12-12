@@ -3,7 +3,6 @@
 import { Rocket, Target, Heart, Quote, User, LucideIcon } from "lucide-react";
 import SidebarButton from "../../../components/ui/SidebarButton";
 import { useState, useEffect } from "react";
-import { sidebarButtons } from "../../../dummy/aboutData";
 
 const iconMap: Record<string, LucideIcon> = {
   User,
@@ -12,6 +11,40 @@ const iconMap: Record<string, LucideIcon> = {
   Heart,
   Quote,
 };
+
+// Inline sidebar buttons data
+const sidebarButtons = [
+  {
+    id: "about-me",
+    label: "About Me",
+    subtitle: "Overview",
+    icon: "User"
+  },
+  {
+    id: "aspirations",
+    label: "Aspirations",
+    subtitle: "Dreams & Goals",
+    icon: "Rocket"
+  },
+  {
+    id: "life-goals",
+    label: "Life Goals",
+    subtitle: "Objectives",
+    icon: "Target"
+  },
+  {
+    id: "hobbies",
+    label: "Hobbies",
+    subtitle: "Interests",
+    icon: "Heart"
+  },
+  {
+    id: "motto",
+    label: "Motto",
+    subtitle: "Life Philosophy",
+    icon: "Quote"
+  }
+];
 
 export default function AboutSidebar() {
   const [activeSection, setActiveSection] = useState("about-me");

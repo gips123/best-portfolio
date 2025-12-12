@@ -3,10 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { projects, Project } from "../../../dummy/projectsData";
+import { Project } from "../../../lib/types";
 import DesignProjectModal from "./DesignProjectModal";
 
-export default function DesignProjectsShowcase() {
+interface DesignProjectsShowcaseProps {
+  projects: Project[];
+}
+
+export default function DesignProjectsShowcase({ projects }: DesignProjectsShowcaseProps) {
   const designProjects = projects.filter(project => project.category === "desain-grafis");
   const [selectedDesignProject, setSelectedDesignProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

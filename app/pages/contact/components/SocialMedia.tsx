@@ -1,10 +1,21 @@
 "use client";
 
 import { MessageSquare } from "lucide-react";
-import { socialLinks } from "../../../dummy/contactData";
 import GlassCard from "../../../components/ui/GlassCard";
+import { SocialLink } from "../../../lib/types";
+import { Linkedin, Github, Instagram, LucideIcon } from "lucide-react";
 
-export default function SocialMedia() {
+const iconMap: Record<string, LucideIcon> = {
+  Linkedin,
+  Github,
+  Instagram,
+};
+
+interface SocialMediaProps {
+  socialLinks: SocialLink[];
+}
+
+export default function SocialMedia({ socialLinks }: SocialMediaProps) {
   return (
     <GlassCard hover={false} className="h-full">
       <div className="p-6 h-full flex flex-col" style={{ minHeight: '160px' }}>
@@ -14,7 +25,7 @@ export default function SocialMedia() {
         </h3>
         <div className="flex gap-4 flex-1 items-center">
           {socialLinks.map((social, index) => {
-            const IconComponent = social.icon;
+            const IconComponent = iconMap[social.icon] || MessageSquare;
             return (
               <a
                 key={index}

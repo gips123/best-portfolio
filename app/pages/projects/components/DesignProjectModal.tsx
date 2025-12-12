@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Project } from "../../../dummy/projectsData";
+import { Project } from "../../../lib/types";
 
 interface DesignProjectModalProps {
   project: Project | null;
