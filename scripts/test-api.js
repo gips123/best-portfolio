@@ -5,7 +5,14 @@
  * Usage: node scripts/test-api.js
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8080';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE;
+
+if (!API_BASE_URL) {
+  console.error('❌ Error: NEXT_PUBLIC_API_BASE environment variable is required');
+  console.error('   Please set it before running this script:');
+  console.error('   export NEXT_PUBLIC_API_BASE=http://localhost:8080');
+  process.exit(1);
+}
 
 const endpoints = [
   { name: 'Projects', url: '/api/projects' },

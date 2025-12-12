@@ -20,7 +20,16 @@ export default function TestAPIPage() {
   useEffect(() => {
     async function runTests() {
       setLoading(true);
-      const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8080';
+      const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE;
+      if (!API_BASE_URL) {
+        setResults([{
+          name: 'Configuration Error',
+          status: 'error',
+          error: 'NEXT_PUBLIC_API_BASE environment variable is not set',
+        }]);
+        setLoading(false);
+        return;
+      }
       setBaseUrl(API_BASE_URL);
 
       const endpoints = [

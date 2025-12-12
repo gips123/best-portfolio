@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { apiClient } from '../../lib/api/client';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8080';
+const API_BASE_URL = process.env.API_BASE_URL || process.env.NEXT_PUBLIC_API_BASE;
 
 export async function GET() {
   const results: Record<string, any> = {

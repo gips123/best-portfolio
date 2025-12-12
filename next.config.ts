@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
   // Optimize production builds
   compress: true,
   poweredByHeader: false,
+  // Enable standalone output for Docker
+  output: 'standalone',
 };
 
 export default nextConfig;
