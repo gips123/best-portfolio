@@ -31,7 +31,6 @@ export default function HomeClient() {
           </MainCard>
         </div>
 
-        {/* Download CV Button - Outside MainCard */}
         <motion.div
           className="relative z-10 flex items-center justify-center w-full"
           initial={{ opacity: 1, y: 0, filter: "blur(0px)" }}
