@@ -23,7 +23,7 @@ export const skillsData: SkillCategory[] = [
       { name: "React/Next.js", percentage: 90, icon: Code },
       { name: "TypeScript", percentage: 88, icon: Code },
       { name: "Tailwind CSS", percentage: 90, icon: Code },
-      { name: "Framer Motion", percentage: 80, icon: Code },
+      { name: "Framer Motion", percentage: 60, icon: Code },
     ],
   },
   {
@@ -31,10 +31,10 @@ export const skillsData: SkillCategory[] = [
     description: "Building robust, scalable server-side applications and APIs with modern technologies.",
     icon: Server,
     skills: [
-      { name: "Node.js", percentage: 80, icon: Server },
-      { name: "Express.js", percentage: 80, icon: Server },
-      { name: "MySQL", percentage: 88, icon: Database },
-      { name: "MongoDB", percentage: 70, icon: Database },
+      { name: "GO", percentage: 30, icon: Server },
+      { name: "Express.js", percentage: 60, icon: Server },
+      { name: "MySQL", percentage: 68, icon: Database },
+      { name: "PostgreSQL", percentage: 50, icon: Database },
     ],
   },
   {
