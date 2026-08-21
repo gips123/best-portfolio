@@ -4,6 +4,7 @@ import { Rocket, Target, Heart, Quote, User, LucideIcon } from "lucide-react";
 import ContentCard from "../../../components/ui/ContentCard";
 import SectionHeader from "../../../components/ui/SectionHeader";
 import { aboutCards } from "../../../dummy/aboutData";
+import GitHubActivityHeatmap from "./GitHubActivityHeatmap";
 
 const iconMap: Record<string, LucideIcon> = {
   User,
@@ -46,6 +47,8 @@ export default function AboutContent() {
                     />
                   </div>
                 ))}
+
+                {card.id === "about-me" && <GitHubActivityHeatmap />}
 
                 {card.content.hobbies && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">

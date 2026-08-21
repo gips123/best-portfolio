@@ -23,12 +23,6 @@ export const projectImageMap: Record<number, string[]> = {
     "/uonepay/4.png",
     "/uonepay/5.png",
   ],
-  3: [
-    "/payment/1.png",
-    "/payment/2.png",
-    "/payment/3.png",
-    "/payment/4.png",
-  ],
   4: [
     "/travel/1.png",
     "/travel/2.png",
@@ -109,6 +103,31 @@ export const projectImageMap: Record<number, string[]> = {
     "/ifortepay/7.png",
     "/ifortepay/8.png",
     "/ifortepay/9.png",
+  ],
+  25: [
+    "/forgeui/1.png",
+    "/forgeui/2.png",
+    "/forgeui/3.png",
+    "/forgeui/4.png",
+  ],
+  26: [
+    "/local-market/1.png",
+    "/local-market/2.png",
+    "/local-market/3.png",
+  ],
+  27: [
+    "/pg-disburse/1.png",
+    "/pg-disburse/2.png",
+    "/pg-disburse/3.png",
+    "/pg-disburse/4.png",
+    "/pg-disburse/5.png",
+  ],
+  28: [
+    "/qa-automation/1.png",
+    "/qa-automation/2.png",
+  ],
+  29: [
+    "/workblom/1.png",
   ],
 };
 
